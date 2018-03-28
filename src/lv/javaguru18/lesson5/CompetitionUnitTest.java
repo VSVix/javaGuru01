@@ -3,7 +3,8 @@ package lv.javaguru18.lesson5;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static junit.framework.TestCase.assertEquals;
+//import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Created by Vix on 3/8/2018.
