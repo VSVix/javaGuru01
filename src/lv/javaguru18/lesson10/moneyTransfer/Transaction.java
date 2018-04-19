@@ -3,22 +3,23 @@ package lv.javaguru18.lesson10.moneyTransfer;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-public class transaction {
+public class Transaction {
     private  String creditAcc;
     private  String debitAcc;
     private  BigDecimal ammount;
-    private TransactionStatus status;
-    private final LocalDateTime createdAt;
+    private TransactionStatus status = TransactionStatus.PENDING;
+    private final LocalDateTime createdAt = LocalDateTime.now();
     private  String failReason;
 
 
-    public transaction(String creditAcc, String debitAcc, BigDecimal ammount, TransactionStatus status, String datefailReason) {
+    public Transaction(String creditAcc, String debitAcc, BigDecimal ammount) {
         this.creditAcc = creditAcc;
         this.debitAcc = debitAcc;
         this.ammount = ammount;
-        this.status = status;
-        this.createdAt = LocalDateTime.now();
-        this.failReason = datefailReason;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 
     public String getCreditAcc() {

@@ -7,7 +7,8 @@ public class PaymentSystemImpl implements PaymentSystem {
 
     private static final String SWIFT = "JGURU17LV";
     private long accountNumberSequence = 0;
-    private AccountRepo accRepo = new AccountRepo();
+    private accountRepo accRepo = new accountRepo();
+    private TransactionRepo transactionRepo = new TransactionRepo();
 
     @Override
     public String createAccount(BigDecimal initialBalance) {
@@ -26,6 +27,10 @@ public class PaymentSystemImpl implements PaymentSystem {
 
     @Override
     public TransactionStatus transact(String fromAccNum, String toAccNum, BigDecimal amount) {
+          Account fromAccount = accRepo.findByNumber(fromAccNum);
+          Account toAccount = accRepo.findByNumber(toAccNum);
+
+          Transaction transaction = toAccount.topUp(fromAccount, amount);
 
 
         return null;
