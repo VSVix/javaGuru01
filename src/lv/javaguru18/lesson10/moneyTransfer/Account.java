@@ -25,7 +25,6 @@ public class Account {
         Transaction transaction = new Transaction(fromAccount.number, this.number, amount);
 
         try {
-
             fromAccount.validateStatus();
             if (BigDecimal.ZERO.compareTo(amount) > 0) {
                 throw new IllegalArgumentException("Amount must be greater than 0!");

@@ -11,16 +11,14 @@ public class TransactionRepo {
         transactions.add(transaction);
     }
 
-    public List<Statement> findByAllAccountNumber(String accountNumber) {
+    public List<Transaction> findByAllAccountNumber(String accountNumber) {
 //        List<Statement> matchedTransactions = new ArrayList<>();
-
 //        for(Transaction transaction : transactions){
 //            if (transaction.getCreditAcc().equals(accountNumber)||
 //                    transaction.getCreditAcc().equals(accountNumber)) {
 //                matchedTransactions.add(new Statement(transaction, accountNumber));
 //            }
 //        }
-
 //        if (matchedTransactions == null){
 //            throw new RuntimeException("Can't find such account number: "+accountNumber);
 //        }
@@ -28,7 +26,6 @@ public class TransactionRepo {
 
         return transactions.stream()
                 .filter(tr -> isCorrectAccountNumber(accountNumber, tr))
-                .map(tr -> new Statement(tr, accountNumber))
                 .collect(Collectors.toList());
     }
 

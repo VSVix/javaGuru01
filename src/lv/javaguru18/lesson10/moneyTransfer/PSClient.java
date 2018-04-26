@@ -15,9 +15,10 @@ public class PSClient {
         paymentSystem.transact(bobsAccountNumber,janesAccountNumber,new BigDecimal(-60));
         paymentSystem.transact(bobsAccountNumber,janesAccountNumber,new BigDecimal(600));
 
-        List<Statement> statements = paymentSystem.findAllStatemens(bobsAccountNumber);
+        List<Statement> statements = paymentSystem.findAllStatements(bobsAccountNumber);
 
-        statements.stream().forEach(System.out::println);
+        statements.stream()
+                .forEach(System.out::println);
 
     }
 }

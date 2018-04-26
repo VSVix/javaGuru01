@@ -9,6 +9,6 @@ public interface PaymentSystem {
 
     String createAccount(BigDecimal initialBalance);
 
-    List<Statement> findAllStatemens(String accNumber);
+    List<Statement> findAllStatements(String accNumber);
 
 }
